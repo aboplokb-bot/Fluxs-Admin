@@ -709,10 +709,11 @@
         // LOGOUT
         function handleLogout() {
             adminState.isLoggedIn = false;
-            adminState.isFirstLogin = true;
+            // Don't reset isFirstLogin if they have a custom password
             document.getElementById('password').value = '';
             showScreen('loginScreen');
             showError('');
+            saveAdminState();
         }
         
         // UI
